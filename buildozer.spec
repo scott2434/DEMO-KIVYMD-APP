@@ -442,9 +442,33 @@ warn_on_root = 1
 #   Buildozer's .spec files have some additional features:
 #
 #   Buildozer supports lists - i.e.
-#       [app]
+#       [app]- name: Install AIDL
+        run: |- name: Install AIDL
+        run: |
+          sudo apt-get update
+          sudo apt-get install build-essential
+          sudo apt-get install libstdc++6
+          sudo apt-get install aidl
+          pip3 install httplib2 pyasn1 pyasn1-modules rsa six
+          pip3 install gcloud oauth2client pycryptodome python-jwt requests requests-toolbelt
+          pip3 install pyparsing jws
+          sudo apt-get update
+          sudo apt-get install build-essential
+          sudo apt-get install libstdc++6
+          sudo apt-get install aidl
+          pip3 install httplib2 pyasn1 pyasn1-modules rsa six
+          pip3 install gcloud oauth2client pycryptodome python-jwt requests requests-toolbelt
+          pip3 install pyparsing jws
 #       source.include_exts = py,png,jpg
-#       #                     ^ This is a list.
+#       #                     ^ This is a list.- name: Install AIDL
+        run: |
+          sudo apt-get update
+          sudo apt-get install build-essential
+          sudo apt-get install libstdc++6
+          sudo apt-get install aidl
+          pip3 install httplib2 pyasn1 pyasn1-modules rsa six
+          pip3 install gcloud oauth2client pycryptodome python-jwt requests requests-toolbelt
+          pip3 install pyparsing jws
 #
 #       [app:source.include_exts]
 #       py
