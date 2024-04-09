@@ -27,7 +27,17 @@ jobs:
         with:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
-
+      
+      - name: Install AIDL
+        run: |
+          sudo apt-get update
+          sudo apt-get install build-essential
+          sudo apt-get install libstdc++6
+          sudo apt-get install aidl
+          pip3 install httplib2 pyasn1 pyasn1-modules rsa six
+          pip3 install gcloud oauth2client pycryptodome python-jwt requests requests-toolbelt
+          pip3 install pyparsing jws
+          
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
